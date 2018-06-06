@@ -1,0 +1,27 @@
+/* Text styles */
+
+h3 {
+  color: black;
+  font-family: serif;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.container {
+  margin-left: 30px;
+  margin-top: 20px;
+
+}
+
+.box {
+  width: 300px;
+  height: 125px;
+  border: 1.5px solid lightgrey;
+  display: inline-flex;
+  margin: 10px;
+  box-shadow: 1px 1px 1px #888888;
+  border-radius: 5.5px;
+}
+.box:hover {
+  background-color: #F2FBFF;
+}
