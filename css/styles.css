@@ -1,9 +1,11 @@
 /* Text styles */
+body {
+  font-family: "Times New Roman", sans-serif;
+}
 
-h3 {
+h2 {
   color: black;
   font-weight: lighter;
-  font-family: "Times New Roman";
   text-align: left;
   margin-left: 35px;
   display: inline-block;
@@ -16,20 +18,45 @@ h3 {
 }
 
 .box {
-  width: 300px;
+  width: 310px;
   height: 125px;
   border: 1.5px solid lightgrey;
   display: inline-flex;
-  margin: 7.5px;
+  margin: 5px;
   box-shadow: 1px 1px 1px #888888;
   border-radius: 5.5px;
 }
 .box:hover {
   background-color: #F2FBFF;
+  cursor: pointer;
 }
 
 label {
   display: inline-block;
-  margin-left: 280px
+  margin-left: 175px
+}
 
+img {
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.employee_data {
+  text-align: center;
+}
+
+h3 {
+  margin: auto;
+  text-transform: capitalize;
+}
+
+.email{
+  margin: auto;
+  color: grey;
+}
+.city{
+  text-transform: capitalize;
+  margin: auto;
+  color: grey;
 }
