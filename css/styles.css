@@ -37,13 +37,14 @@ label {
 }
 
 img {
-  display: block;
+  float: left;
   margin: auto;
   border-radius: 50%;
 }
 
 .employee_data {
-  text-align: center;
+  display: inline-block;
+  text-align: left;
 }
 
 h3 {
