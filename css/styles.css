@@ -61,3 +61,8 @@ h3 {
   margin: auto;
   color: grey;
 }
+
+.prev, .next, .close {
+
+  text-decoration: none;
+}

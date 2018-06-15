@@ -31,10 +31,16 @@ class RandomUser {
 
         // create modal div function including buttons
         createModal () {
+          let date = this.dob.substr(0,10);
+          let dateArr = date.split('-');
+          let year = dateArr[0][2] + dateArr[0][3];
+          let month = dateArr[1];
+          let day = dateArr[2];
+          let modalDate = month + '/' + day + '/' + year;
         let modaldiv = `
         <div class="modal_window">
-          <a href="#" class="close">&#x274C;</a>
           <img src="${this.picture.large}" alt/>
+          <a href="#" class="close">&#x274C;</a>
           <div class="employee_data">
             <h1>${this.name.first} ${this.name.last}</h1>
             <p class="username">${this.login.username}</p>
@@ -42,10 +48,10 @@ class RandomUser {
             <p class="cell-num">${this.cell}</p>
             <br>
             <p class="address">${this.location.street}<br/>${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
-            <p class="dob">Birthday: ${this.dob}</p>
+            <p class="dob">Birthday: ${modalDate}</p>
             </div>
-          <a href="#" class="prev">&larr</a>
-          <a href="#" class=next">$rarr</a>
+          <a href="#" class="prev">&larr;</a>
+          <a href="#" class="next">&rarr;</a>
         </div>
         `;
         return modaldiv;
@@ -74,8 +80,11 @@ getUserInfo()
       employeeArr.push(employee);
     });
     employeeArr.map( employee => {
-      const box = employee.createBox();
-      $container.append(box);
+      // const box = employee.createBox();
+      // $container.append(box);
+
+      const modal = employee.createModal();
+      $container.append(modal);
     });
   });
 
