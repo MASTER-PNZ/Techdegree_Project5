@@ -29,9 +29,11 @@ class RandomUser {
             return boxdiv;
         }
 
+
+
         // create modal div function including buttons
         createModal () {
-          let date = this.dob.substr(0,10);
+          let date = this.dob.date.substr(0,10);
           let dateArr = date.split('-');
           let year = dateArr[0][2] + dateArr[0][3];
           let month = dateArr[1];
@@ -48,7 +50,7 @@ class RandomUser {
             <p class="cell-num">${this.cell}</p>
             <br>
             <p class="address">${this.location.street}<br/>${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
-            <p class="dob">Birthday: ${modalDate}</p>
+            <p class="dob">Birthday:${modalDate}</p>
             </div>
           <a href="#" class="prev">&larr;</a>
           <a href="#" class="next">&rarr;</a>
@@ -80,20 +82,28 @@ getUserInfo()
       employeeArr.push(employee);
     });
     employeeArr.map( employee => {
-      // const box = employee.createBox();
-      // $container.append(box);
+      const box = employee.createBox();
+      $container.append(box);
 
       const modal = employee.createModal();
       $container.append(modal);
+
+      $('.modal_window').hide();
+      
     });
   });
-
 }
 
 userDivs();
 
 
 // event listener for boxes
+
+// $('.box').on('click', function(box){
+//  let currModal = this.$('.modal_window');
+//  this.currModal.show();
+//
+// });
 
 // event listener for search_bar
 //
