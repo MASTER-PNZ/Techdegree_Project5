@@ -67,7 +67,7 @@ h3 {
   text-decoration: none;
 }
 
-/* .modal_window {
+.modal_window {
+  position: relative;
 
-  display: none;
-} */
+}

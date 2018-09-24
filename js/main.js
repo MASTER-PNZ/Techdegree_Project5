@@ -32,7 +32,7 @@ class RandomUser {
 
 
         // create modal div function including buttons
-        createModal () {
+        createModal (currentEmployee) {
           let date = this.dob.date.substr(0,10);
           let dateArr = date.split('-');
           let year = dateArr[0][2] + dateArr[0][3];
@@ -89,30 +89,23 @@ getUserInfo()
       $container.append(modal);
 
       $('.modal_window').hide();
-      
+
+
+
     });
+
+    $('.box').on('click', function(){
+      $(this).next().show();
+      $('.box').hide();
+    });
+
   });
 }
 
 userDivs();
 
 
+
 // event listener for boxes
-
-// $('.box').on('click', function(box){
-//  let currModal = this.$('.modal_window');
-//  this.currModal.show();
-//
-// });
-
 // event listener for search_bar
-//
-// $search.on('keyup', function (employeeArr) {
-// employeeArr.forEach(function (index){
-// if ($search.val)
-//
-// });
-//
-// });
-
 // event listener for modal buttons
