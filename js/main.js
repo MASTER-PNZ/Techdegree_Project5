@@ -21,7 +21,7 @@ class RandomUser {
             <div class="box">
             <img src="${this.picture.medium}" alt/>
               <div class="employee_data">
-                <h3>${this.name.first} ${this.name.last}</h3>
+                <h3 class="name">${this.name.first} ${this.name.last}</h3>
                 <p class="email">${this.email}</p>
                 <p class="city">${this.location.city}</p>
               </div>
@@ -81,31 +81,49 @@ getUserInfo()
       const employee = new RandomUser(usr.name, usr.location, usr.email, usr.picture, usr.login, usr.cell, usr.dob);
       employeeArr.push(employee);
     });
-    employeeArr.map( employee => {
-      const box = employee.createBox();
-      $container.append(box);
+      employeeArr.map( employee => {
+        const box = employee.createBox();
+        $container.append(box);
 
-      const modal = employee.createModal();
-      $container.append(modal);
+        const modal = employee.createModal();
+        $container.append(modal);
 
-      $('.modal_window').hide();
+        $('.modal_window').hide();
 
 
 
-    });
+      });
 
-    $('.box').on('click', function(){
-      $(this).next().show();
-      $('.box').hide();
+  // event listener for boxes to show current modal window
+      $('.box').on('click', function(){
+        $(this).next().show();
+        // $('.box').hide();
+      });
+
+  // event listeners for modal buttons (close, previous, and next).
+      $('.close').on('click', function (){
+        $(this).parent().hide();
+      });
+
+      $('.prev').on('click', function (){
+        let modDiv = $(this).parent();
+        modDiv.hide();
+        modDiv.prev().prev().show();
+      });
+
+      $('.next').on('click', function (){
+        let modDiv = $(this).parent();
+        modDiv.hide();
+        modDiv.next().next().show();
+      });
+
+  // event listener for search_bar
+    $search.on('keyup', function(){
+      let userSearch = $search.val().toLowerCase();
+
     });
 
   });
 }
 
 userDivs();
-
-
-
-// event listener for boxes
-// event listener for search_bar
-// event listener for modal buttons
