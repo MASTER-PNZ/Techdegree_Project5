@@ -97,21 +97,25 @@ getUserInfo()
       $('.box').on('click', function(){
         $(this).next().show();
         $('body').addClass('overlay');
-        // $('.box').addClas('disabled');
+        $('.box').addClass('disabled');
       });
 
   // event listeners for modal buttons (close, previous, and next).
       $('.close').on('click', function (){
         $(this).parent().hide();
         $('body').removeClass('overlay');
-        // $('.box').removeClas('disabled');
+        $('.box').removeClass('disabled');
       });
+
+      $('.modal_window:eq(0) > .prev').hide();
 
       $('.prev').on('click', function (){
         let modDiv = $(this).parent();
         modDiv.hide();
         modDiv.prev().prev().show();
       });
+
+      $('.modal_window:eq(11) > .next').hide();
 
       $('.next').on('click', function (){
         let modDiv = $(this).parent();
