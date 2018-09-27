@@ -48,7 +48,6 @@ class RandomUser {
             <p class="username">${this.login.username}</p>
             <p class="email">${this.email}</p>
             <p class="cell-num">${this.cell}</p>
-            <br>
             <p class="address">${this.location.street}<br/>${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
             <p class="dob">Birthday:${modalDate}</p>
             </div>
@@ -97,12 +96,15 @@ getUserInfo()
   // event listener for boxes to show current modal window
       $('.box').on('click', function(){
         $(this).next().show();
-        // $('.box').hide();
+        $('body').addClass('overlay');
+        // $('.box').addClas('disabled');
       });
 
   // event listeners for modal buttons (close, previous, and next).
       $('.close').on('click', function (){
         $(this).parent().hide();
+        $('body').removeClass('overlay');
+        // $('.box').removeClas('disabled');
       });
 
       $('.prev').on('click', function (){
@@ -133,7 +135,7 @@ getUserInfo()
         if ( username[i].innerHTML.indexOf(userSearch) > -1 ) {
           username[i].parentElement.parentElement.previousElementSibling.style.display = "";
         } else {
-          username[i].parentElement.parentElement.previousElementSibling.style.display = 'none';
+          username[i].parentElement.parentElement.style.display = 'none';
         }
       }
     });

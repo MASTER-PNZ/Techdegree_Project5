@@ -18,7 +18,7 @@ h2 {
 }
 
 .box {
-  width: 310px;
+  width: 315px;
   height: 125px;
   border: 1.5px solid lightgrey;
   display: inline-flex;
@@ -67,8 +67,24 @@ h3 {
   text-decoration: none;
 }
 
-.modal_window {
-  position: absolute;
-  margin: 50%;
+.overlay {
   background-color: lightgrey;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.modal_window {
+  box-shadow: 1px 1px 1px #888888;
+  background-color: white;
+  border-radius: 5.5px;
+  border: 1.5px solid lightgrey;
+  width: 325px;
+  height: 375px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
 }
