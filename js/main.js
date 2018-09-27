@@ -19,7 +19,7 @@ class RandomUser {
        createBox () {
           let boxdiv = `
             <div class="box">
-            <img src="${this.picture.medium}" alt/>
+            <img class="boximg" src="${this.picture.medium}" alt/>
               <div class="employee_data">
                 <h3 class="name">${this.name.first} ${this.name.last}</h3>
                 <p class="email">${this.email}</p>
@@ -41,16 +41,16 @@ class RandomUser {
           let modalDate = month + '/' + day + '/' + year;
         let modaldiv = `
         <div class="modal_window">
-          <img src="${this.picture.large}" alt/>
           <a href="#" class="close">&#x274C;</a>
-          <div class="employee_data">
+          <img class="modimg" src="${this.picture.large}" alt/>
+          <div class="modemployee_data">
             <h1>${this.name.first} ${this.name.last}</h1>
             <p class="username">${this.login.username}</p>
             <p class="email">${this.email}</p>
             <p class="cell-num">${this.cell}</p>
             <p class="address">${this.location.street}<br/>${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
             <p class="dob">Birthday:${modalDate}</p>
-            </div>
+          </div>
           <a href="#" class="prev">&larr;</a>
           <a href="#" class="next">&rarr;</a>
         </div>
