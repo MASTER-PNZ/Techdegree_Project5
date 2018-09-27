@@ -120,7 +120,22 @@ getUserInfo()
   // event listener for search_bar
     $search.on('keyup', function(){
       let userSearch = $search.val().toLowerCase();
-
+      let name = $('.name');
+      let username = $('.username');
+      for(i = 0; i < name.length; i += 1) {
+        if ( name[i].innerHTML.indexOf(userSearch) > -1 ) {
+          name[i].parentElement.parentElement.style.display = "";
+        } else {
+          name[i].parentElement.parentElement.style.display = 'none';
+        }
+      }
+      for(i = 0; i < username.length; i += 1) {
+        if ( username[i].innerHTML.indexOf(userSearch) > -1 ) {
+          username[i].parentElement.parentElement.previousElementSibling.style.display = "";
+        } else {
+          username[i].parentElement.parentElement.previousElementSibling.style.display = 'none';
+        }
+      }
     });
 
   });
