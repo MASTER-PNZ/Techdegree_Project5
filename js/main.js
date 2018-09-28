@@ -48,6 +48,7 @@ class RandomUser {
             <p class="username">${this.login.username}</p>
             <p class="email">${this.email}</p>
             <p class="cell-num">${this.cell}</p>
+            <hr>
             <p class="address">${this.location.street}<br/>${this.location.city}, ${this.location.state} ${this.location.postcode}</p>
             <p class="dob">Birthday:${modalDate}</p>
           </div>
