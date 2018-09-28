@@ -95,14 +95,14 @@ getUserInfo()
       $('.box').on('click', function(){
         $(this).next().show();
         $('body').addClass('overlay');
-        $('.box').addClass('disabled');
+        $('.box, #search_bar').addClass('disabled');
       });
 
   // Event listeners for modal buttons (close, previous, and next).
       $('.close').on('click', function (){
         $(this).parent().hide();
         $('body').removeClass('overlay');
-        $('.box').removeClass('disabled');
+        $('.box, #search_bar').removeClass('disabled');
       });
 
       $('.modal_window:eq(0) > .prev').hide();
