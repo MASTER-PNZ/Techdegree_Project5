@@ -62,8 +62,6 @@ margin-top: 5px;
 }
 
 .employee_data {
-  /* display: inline-block;
-  text-align: left; */
   margin-top: 31.5px;
   margin-right: auto;
   margin-left: auto;
@@ -76,7 +74,7 @@ vertical-align: middle;
   margin: auto;
 }
 
-.username, .email, .cell-num, .address, .dob {
+.city, .email, .cell-num, .address, .dob {
   color: grey;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -86,11 +84,17 @@ hr {
   width: 75%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 
 }
 
-h3 {
+h3, h1 {
   margin: auto;
+  text-transform: capitalize;
+}
+
+.address {
   text-transform: capitalize;
 }
 
